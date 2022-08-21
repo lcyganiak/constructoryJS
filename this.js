@@ -143,10 +143,12 @@ function createNewWorker() {
         lat: lat
     }]
     console.log(imie, surName, nextName, dataUrodzenia, exp)
-    newWorkerOkruszki.push(new WorkerOkruszki(imie, surName, nextName, dataUrodzenia, exp))
+    const nowyPracownik = new WorkerOkruszki(imie, surName, nextName, dataUrodzenia, exp)
+    newWorkerOkruszki.push(nowyPracownik)
 
     console.log("newWorkerOkruszki z klika", newWorkerOkruszki)
     addToPage(newWorkerOkruszki)
+    send(nowyPracownik)
      
 }
 
@@ -159,6 +161,10 @@ function addToPage(para) {
         paragraf.innerText = "imie pracowniak " + element.name  + "Ma lat " + element.age
         workers.appendChild(paragraf)
     });
+}
+
+function send(para) {
+    // logika wysłania na be
 }
 // const newWorkerOkruszki = createNewWorker()
 
