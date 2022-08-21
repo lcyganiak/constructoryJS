@@ -130,7 +130,7 @@ class WorkerOkruszki extends Experience {
 // utowrzenie pracowniak
 
 const btnNewWorker = document.getElementById('newWorker')
-let newWorkerOkruszki
+let newWorkerOkruszki = []
 function createNewWorker() {
     const imie = document.getElementById('imie').value
     const nextName = document.getElementById('nextName').value
@@ -143,9 +143,22 @@ function createNewWorker() {
         lat: lat
     }]
     console.log(imie, surName, nextName, dataUrodzenia, exp)
-    newWorkerOkruszki = new WorkerOkruszki(imie, surName, nextName, dataUrodzenia, exp)
+    newWorkerOkruszki.push(new WorkerOkruszki(imie, surName, nextName, dataUrodzenia, exp))
+
     console.log("newWorkerOkruszki z klika", newWorkerOkruszki)
+    addToPage(newWorkerOkruszki)
      
+}
+
+function addToPage(para) {
+    const workers = document.getElementById('workers')
+    workers.innerText = ''
+    debugger
+    para.forEach(element => {
+        const paragraf = document.createElement('p')
+        paragraf.innerText = "imie pracowniak " + element.name  + "Ma lat " + element.age
+        workers.appendChild(paragraf)
+    });
 }
 // const newWorkerOkruszki = createNewWorker()
 

@@ -1,13 +1,11 @@
 interface Names {
     fullName: string,
-    xd: number
 }
 
 
-class Names {
+class Names implements Names {
     constructor(name: string, secName: string, nextName: string) {
         this.fullName = name + ' ' + nextName + ' ' + secName
-        this.xd = 2
     }
     get getfullName() {
         return this.fullName
@@ -15,7 +13,7 @@ class Names {
 }
 
 
-function add(a: number, b: number): any {
+function add(a: number, b: number): number {
     return a + b
 }
 
