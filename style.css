@@ -1,0 +1,17 @@
+#new, .newExp {
+    width: 80%;
+    margin: 0 auto;
+}
+input, button {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+button {
+    width: auto;
+    margin-bottom: 40px;
+}
+
+.newExp {
+    display: none;
+}
